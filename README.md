@@ -1,36 +1,50 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# mountainview-ui
 
-## Getting Started
+Material Design 3 for your codebase. React components that follow the M3
+spec — the tonal color system, type scale, shape, elevation, and state
+layers — distributed the shadcn way: you install the source and own it.
 
-First, run the development server:
+**Not affiliated with Google LLC.**
+
+## What's inside
+
+- **22 components** (`registry/mountainview-ui/`): Button, FAB, Icon Button,
+  Switch, Checkbox, Radio Group, Slider, Text Field (floating label), Card,
+  Chip, Dialog, Bottom Sheet, Snackbar, Menu, Tabs, Navigation Bar,
+  Navigation Rail, Progress, Badge, List, Segmented Button, Top App Bar
+- **Theme tokens** (`registry/theme.css`): the M3 baseline color scheme with
+  light/dark values, the full type scale, shape tokens, elevation shadows,
+  and 8%/12% state-layer utilities — all as Tailwind CSS v4 tokens
+- **Docs site** (Next.js App Router): live previews, install commands, and
+  full source for every component
+- **shadcn registry** (`registry.json` → `public/r/*.json`)
+
+## Using the components
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# 1. one-time: theme tokens
+npx shadcn@latest add https://<your-deployment>/r/theme.json
+# import mountainview-ui-theme.css in your global stylesheet, after tailwindcss
+
+# 2. any component
+npx shadcn@latest add https://<your-deployment>/r/button.json
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+```tsx
+import { Button } from "@/components/ui/button";
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+<Button variant="tonal">Continue</Button>;
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Development
 
-## Learn More
+```bash
+npm install
+npm run dev            # docs site
+npm run registry:build # rebuild public/r/*.json after editing registry/
+npm run build          # production build (fully static)
+```
 
-To learn more about Next.js, take a look at the following resources:
+## License
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+MIT

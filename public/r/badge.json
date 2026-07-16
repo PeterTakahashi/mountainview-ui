@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "badge",
+  "title": "Badge",
+  "description": "The 6dp error dot and numbered count badge.",
+  "registryDependencies": [
+    "utils"
+  ],
+  "files": [
+    {
+      "path": "registry/mountainview-ui/badge.tsx",
+      "content": "import * as React from \"react\";\n\nimport { cn } from \"@/lib/utils\";\n\n/**\n * M3 badges: the small 6dp error dot and the large numbered badge.\n * Absolutely position over an icon, or use inline.\n */\nfunction Badge({\n  className,\n  children,\n  ...props\n}: React.ComponentProps<\"span\">) {\n  const small = children === undefined || children === null;\n\n  return (\n    <span\n      data-slot=\"badge\"\n      className={cn(\n        \"inline-flex items-center justify-center rounded-full bg-error text-on-error\",\n        small ? \"size-1.5\" : \"h-4 min-w-4 px-1 text-label-s\",\n        className\n      )}\n      {...props}\n    >\n      {children}\n    </span>\n  );\n}\n\nexport { Badge };\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

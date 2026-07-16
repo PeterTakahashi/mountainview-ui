@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "card",
+  "title": "Card",
+  "description": "Elevated, filled, and outlined cards with 12dp corners.",
+  "dependencies": [
+    "class-variance-authority"
+  ],
+  "registryDependencies": [
+    "utils"
+  ],
+  "files": [
+    {
+      "path": "registry/mountainview-ui/card.tsx",
+      "content": "import * as React from \"react\";\nimport { cva, type VariantProps } from \"class-variance-authority\";\n\nimport { cn } from \"@/lib/utils\";\n\n/** M3 cards: elevated, filled, and outlined. 12dp corners. */\nconst cardVariants = cva(\"flex flex-col rounded-md text-on-surface\", {\n  variants: {\n    variant: {\n      elevated: \"bg-surface-low shadow-[var(--shadow-elevation-1)]\",\n      filled: \"bg-surface-highest\",\n      outlined: \"bg-surface shadow-[inset_0_0_0_1px_var(--outline-variant)]\",\n    },\n  },\n  defaultVariants: { variant: \"elevated\" },\n});\n\nfunction Card({\n  className,\n  variant,\n  ...props\n}: React.ComponentProps<\"div\"> & VariantProps<typeof cardVariants>) {\n  return (\n    <div\n      data-slot=\"card\"\n      className={cn(cardVariants({ variant }), className)}\n      {...props}\n    />\n  );\n}\n\nfunction CardHeader({ className, ...props }: React.ComponentProps<\"div\">) {\n  return (\n    <div\n      data-slot=\"card-header\"\n      className={cn(\"flex flex-col gap-1 p-4\", className)}\n      {...props}\n    />\n  );\n}\n\nfunction CardTitle({ className, ...props }: React.ComponentProps<\"div\">) {\n  return (\n    <div data-slot=\"card-title\" className={cn(\"text-title-m\", className)} {...props} />\n  );\n}\n\nfunction CardDescription({ className, ...props }: React.ComponentProps<\"div\">) {\n  return (\n    <div\n      data-slot=\"card-description\"\n      className={cn(\"text-body-m text-on-surface-variant\", className)}\n      {...props}\n    />\n  );\n}\n\nfunction CardContent({ className, ...props }: React.ComponentProps<\"div\">) {\n  return (\n    <div\n      data-slot=\"card-content\"\n      className={cn(\"px-4 pb-2 text-body-m text-on-surface-variant\", className)}\n      {...props}\n    />\n  );\n}\n\nfunction CardFooter({ className, ...props }: React.ComponentProps<\"div\">) {\n  return (\n    <div\n      data-slot=\"card-footer\"\n      className={cn(\"flex items-center justify-end gap-2 p-4 pt-2\", className)}\n      {...props}\n    />\n  );\n}\n\nexport { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle };\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

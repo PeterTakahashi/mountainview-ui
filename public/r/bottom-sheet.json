@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "bottom-sheet",
+  "title": "Bottom Sheet",
+  "description": "28dp-corner sheet with a drag handle on surface-container-low.",
+  "dependencies": [
+    "radix-ui"
+  ],
+  "registryDependencies": [
+    "utils"
+  ],
+  "files": [
+    {
+      "path": "registry/mountainview-ui/bottom-sheet.tsx",
+      "content": "\"use client\";\n\nimport * as React from \"react\";\nimport { Dialog as SheetPrimitive } from \"radix-ui\";\n\nimport { cn } from \"@/lib/utils\";\n\n/** M3 bottom sheet: 28dp top corners, drag handle, surface-container-low. */\nfunction BottomSheet({\n  ...props\n}: React.ComponentProps<typeof SheetPrimitive.Root>) {\n  return <SheetPrimitive.Root data-slot=\"bottom-sheet\" {...props} />;\n}\n\nfunction BottomSheetTrigger({\n  ...props\n}: React.ComponentProps<typeof SheetPrimitive.Trigger>) {\n  return <SheetPrimitive.Trigger data-slot=\"bottom-sheet-trigger\" {...props} />;\n}\n\nfunction BottomSheetClose({\n  ...props\n}: React.ComponentProps<typeof SheetPrimitive.Close>) {\n  return <SheetPrimitive.Close data-slot=\"bottom-sheet-close\" {...props} />;\n}\n\nfunction BottomSheetContent({\n  className,\n  children,\n  ...props\n}: React.ComponentProps<typeof SheetPrimitive.Content>) {\n  return (\n    <SheetPrimitive.Portal>\n      <SheetPrimitive.Overlay\n        data-slot=\"bottom-sheet-overlay\"\n        className=\"fixed inset-0 z-50 bg-scrim/40 data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=closed]:animate-out data-[state=closed]:fade-out-0\"\n      />\n      <SheetPrimitive.Content\n        data-slot=\"bottom-sheet-content\"\n        className={cn(\n          \"fixed inset-x-0 bottom-0 z-50 mx-auto flex max-h-[85dvh] w-full max-w-2xl flex-col rounded-t-xl bg-surface-low text-on-surface shadow-[var(--shadow-elevation-1)] outline-none data-[state=open]:animate-in data-[state=open]:slide-in-from-bottom data-[state=open]:duration-300 data-[state=closed]:animate-out data-[state=closed]:slide-out-to-bottom data-[state=closed]:duration-200\",\n          className\n        )}\n        {...props}\n      >\n        <div\n          aria-hidden\n          className=\"mx-auto mb-2 mt-[22px] h-1 w-8 shrink-0 rounded-full bg-on-surface-variant/40\"\n        />\n        {children}\n      </SheetPrimitive.Content>\n    </SheetPrimitive.Portal>\n  );\n}\n\nfunction BottomSheetTitle({\n  className,\n  ...props\n}: React.ComponentProps<typeof SheetPrimitive.Title>) {\n  return (\n    <SheetPrimitive.Title\n      data-slot=\"bottom-sheet-title\"\n      className={cn(\"px-6 pb-2 text-title-l text-on-surface\", className)}\n      {...props}\n    />\n  );\n}\n\nexport {\n  BottomSheet,\n  BottomSheetClose,\n  BottomSheetContent,\n  BottomSheetTitle,\n  BottomSheetTrigger,\n};\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

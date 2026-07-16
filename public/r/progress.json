@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "progress",
+  "title": "Progress",
+  "description": "Linear indicator with stop dot, plus circular indeterminate.",
+  "dependencies": [
+    "radix-ui"
+  ],
+  "registryDependencies": [
+    "utils"
+  ],
+  "files": [
+    {
+      "path": "registry/mountainview-ui/progress.tsx",
+      "content": "\"use client\";\n\nimport * as React from \"react\";\nimport { Progress as ProgressPrimitive } from \"radix-ui\";\n\nimport { cn } from \"@/lib/utils\";\n\n/**\n * M3 progress indicators: the linear bar with a stop dot and a\n * gap, plus a circular indeterminate spinner.\n */\nfunction Progress({\n  className,\n  value,\n  ...props\n}: React.ComponentProps<typeof ProgressPrimitive.Root>) {\n  const pct = value ?? 0;\n\n  return (\n    <ProgressPrimitive.Root\n      data-slot=\"progress\"\n      className={cn(\"relative h-1 w-full\", className)}\n      {...props}\n    >\n      <div\n        className=\"absolute inset-y-0 left-0 rounded-full bg-primary transition-[width] duration-300\"\n        style={{ width: `calc(${pct}% - 2px)` }}\n      />\n      <div\n        className=\"absolute inset-y-0 rounded-full bg-secondary-container transition-[left] duration-300\"\n        style={{ left: `calc(${pct}% + 2px)`, right: \"8px\" }}\n      />\n      <span className=\"absolute right-0 top-1/2 size-1 -translate-y-1/2 rounded-full bg-primary\" />\n    </ProgressPrimitive.Root>\n  );\n}\n\n/** Circular indeterminate indicator. */\nfunction CircularProgress({\n  className,\n  size = 40,\n  ...props\n}: React.ComponentProps<\"span\"> & { size?: number }) {\n  const stroke = size * 0.105;\n  const r = (size - stroke) / 2;\n\n  return (\n    <span\n      data-slot=\"circular-progress\"\n      role=\"progressbar\"\n      className={cn(\"inline-block animate-spin text-primary [animation-duration:1.2s]\", className)}\n      style={{ width: size, height: size }}\n      {...props}\n    >\n      <svg width={size} height={size}>\n        <circle\n          cx={size / 2}\n          cy={size / 2}\n          r={r}\n          fill=\"none\"\n          stroke=\"currentColor\"\n          strokeWidth={stroke}\n          strokeLinecap=\"round\"\n          strokeDasharray={`${2 * Math.PI * r * 0.72} ${2 * Math.PI * r * 0.28}`}\n        />\n      </svg>\n    </span>\n  );\n}\n\nexport { CircularProgress, Progress };\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

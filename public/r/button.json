@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button",
+  "title": "Button",
+  "description": "Filled, tonal, outlined, text, and elevated common buttons.",
+  "dependencies": [
+    "radix-ui",
+    "class-variance-authority"
+  ],
+  "registryDependencies": [
+    "utils"
+  ],
+  "files": [
+    {
+      "path": "registry/mountainview-ui/button.tsx",
+      "content": "\"use client\";\n\nimport * as React from \"react\";\nimport { Slot } from \"radix-ui\";\nimport { cva, type VariantProps } from \"class-variance-authority\";\n\nimport { cn } from \"@/lib/utils\";\n\n/**\n * M3 common buttons: filled, tonal, outlined, text, and elevated.\n * Fully rounded, 40dp tall, with 8%/12% state layers.\n */\nconst buttonVariants = cva(\n  \"relative inline-flex shrink-0 cursor-pointer select-none items-center justify-center gap-2 overflow-hidden whitespace-nowrap rounded-full text-label-l outline-none transition-[background-color,box-shadow] duration-200 focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-surface disabled:pointer-events-none disabled:opacity-[0.38] [&_svg]:pointer-events-none [&_svg]:size-[18px] [&_svg]:shrink-0\",\n  {\n    variants: {\n      variant: {\n        filled: \"bg-primary text-on-primary state-on-primary\",\n        tonal:\n          \"bg-secondary-container text-on-secondary-container state-on-secondary-container\",\n        outlined:\n          \"text-primary shadow-[inset_0_0_0_1px_var(--outline)] state-primary\",\n        text: \"text-primary state-primary\",\n        elevated:\n          \"bg-surface-low text-primary shadow-[var(--shadow-elevation-1)] state-primary hover:shadow-[var(--shadow-elevation-2)]\",\n      },\n      size: {\n        default: \"h-10 px-6 has-[>svg:first-child]:pl-4\",\n        sm: \"h-8 px-4 text-label-m has-[>svg:first-child]:pl-3 [&_svg]:size-4\",\n        lg: \"h-12 px-7 text-title-m has-[>svg:first-child]:pl-5 [&_svg]:size-5\",\n      },\n    },\n    defaultVariants: {\n      variant: \"filled\",\n      size: \"default\",\n    },\n  }\n);\n\nfunction Button({\n  className,\n  variant,\n  size,\n  asChild = false,\n  ...props\n}: React.ComponentProps<\"button\"> &\n  VariantProps<typeof buttonVariants> & {\n    asChild?: boolean;\n  }) {\n  const Comp = asChild ? Slot.Root : \"button\";\n\n  return (\n    <Comp\n      data-slot=\"button\"\n      className={cn(buttonVariants({ variant, size, className }))}\n      {...props}\n    />\n  );\n}\n\nexport { Button, buttonVariants };\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

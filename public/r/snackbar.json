@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "snackbar",
+  "title": "Snackbar",
+  "description": "Inverse-surface toast, bottom-left; call snackbar() anywhere.",
+  "dependencies": [
+    "radix-ui",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils"
+  ],
+  "files": [
+    {
+      "path": "registry/mountainview-ui/snackbar.tsx",
+      "content": "\"use client\";\n\nimport * as React from \"react\";\nimport { Toast as ToastPrimitive } from \"radix-ui\";\nimport { XIcon } from \"lucide-react\";\n\nimport { cn } from \"@/lib/utils\";\n\n/**\n * M3 snackbar on inverse-surface, bottom-left. Call\n * `snackbar({ message, action })` anywhere; render `<Snackbars />`\n * once near the root.\n */\ntype SnackbarData = {\n  id: number;\n  message: React.ReactNode;\n  /** Optional action button label. */\n  actionLabel?: string;\n  onAction?: () => void;\n  /** Show a trailing close icon. */\n  closable?: boolean;\n  duration?: number;\n};\n\ntype Listener = (items: SnackbarData[]) => void;\n\nlet count = 0;\nlet items: SnackbarData[] = [];\nconst listeners = new Set<Listener>();\n\nfunction emit() {\n  for (const l of listeners) l([...items]);\n}\n\nfunction snackbar(data: Omit<SnackbarData, \"id\">) {\n  const id = ++count;\n  items = [...items, { id, duration: 4000, ...data }];\n  emit();\n  return {\n    id,\n    dismiss: () => {\n      items = items.filter((t) => t.id !== id);\n      emit();\n    },\n  };\n}\n\nfunction Snackbars({\n  className,\n}: {\n  className?: string;\n}) {\n  const [list, setList] = React.useState<SnackbarData[]>([]);\n\n  React.useEffect(() => {\n    const listener: Listener = setList;\n    listeners.add(listener);\n    return () => {\n      listeners.delete(listener);\n    };\n  }, []);\n\n  return (\n    <ToastPrimitive.Provider swipeDirection=\"down\">\n      {list.map((t) => (\n        <ToastPrimitive.Root\n          key={t.id}\n          duration={t.duration}\n          onOpenChange={(open) => {\n            if (!open) {\n              items = items.filter((x) => x.id !== t.id);\n              emit();\n            }\n          }}\n          className={cn(\n            \"pointer-events-auto flex min-h-12 w-full items-center gap-2 rounded-[4px] bg-inverse-surface py-1 pl-4 pr-2 text-body-m text-inverse-on-surface shadow-[var(--shadow-elevation-3)] outline-none\",\n            \"data-[state=open]:animate-in data-[state=open]:slide-in-from-bottom-4 data-[state=open]:fade-in-0 data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[swipe=end]:animate-out data-[swipe=end]:slide-out-to-bottom-4\",\n            className\n          )}\n        >\n          <ToastPrimitive.Description className=\"min-w-0 flex-1 py-2\">\n            {t.message}\n          </ToastPrimitive.Description>\n          {t.actionLabel ? (\n            <button\n              type=\"button\"\n              onClick={() => {\n                t.onAction?.();\n                items = items.filter((x) => x.id !== t.id);\n                emit();\n              }}\n              className=\"shrink-0 rounded-full px-3 py-2 text-label-l text-inverse-primary outline-none hover:bg-[color-mix(in_srgb,var(--inverse-primary)_8%,transparent)]\"\n            >\n              {t.actionLabel}\n            </button>\n          ) : null}\n          {t.closable ? (\n            <ToastPrimitive.Close\n              aria-label=\"Dismiss\"\n              className=\"flex size-8 shrink-0 items-center justify-center rounded-full text-inverse-on-surface outline-none hover:bg-[color-mix(in_srgb,var(--inverse-on-surface)_8%,transparent)]\"\n            >\n              <XIcon className=\"size-4\" />\n            </ToastPrimitive.Close>\n          ) : null}\n        </ToastPrimitive.Root>\n      ))}\n      <ToastPrimitive.Viewport className=\"fixed bottom-4 left-4 z-[60] flex w-[min(344px,calc(100vw-32px))] flex-col gap-2 outline-none\" />\n    </ToastPrimitive.Provider>\n  );\n}\n\nexport { snackbar, Snackbars };\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "top-app-bar",
+  "title": "Top App Bar",
+  "description": "64dp small app bar with on-scroll tint.",
+  "registryDependencies": [
+    "utils"
+  ],
+  "files": [
+    {
+      "path": "registry/mountainview-ui/top-app-bar.tsx",
+      "content": "\"use client\";\n\nimport * as React from \"react\";\n\nimport { cn } from \"@/lib/utils\";\n\n/**\n * M3 small top app bar: 64dp, leading navigation icon, title, and\n * trailing actions. Tints to surface-container on scroll.\n */\nfunction TopAppBar({\n  className,\n  scrolled,\n  ...props\n}: React.ComponentProps<\"header\"> & {\n  /** Show the on-scroll container tint. */\n  scrolled?: boolean;\n}) {\n  return (\n    <header\n      data-slot=\"top-app-bar\"\n      className={cn(\n        \"flex h-16 w-full items-center gap-1 px-1 transition-colors duration-200\",\n        scrolled ? \"bg-surface-container\" : \"bg-surface\",\n        className\n      )}\n      {...props}\n    />\n  );\n}\n\nfunction TopAppBarTitle({ className, ...props }: React.ComponentProps<\"h1\">) {\n  return (\n    <h1\n      data-slot=\"top-app-bar-title\"\n      className={cn(\"min-w-0 flex-1 truncate px-1 text-title-l text-on-surface\", className)}\n      {...props}\n    />\n  );\n}\n\nexport { TopAppBar, TopAppBarTitle };\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

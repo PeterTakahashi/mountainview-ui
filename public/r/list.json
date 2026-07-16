@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "list",
+  "title": "List",
+  "description": "One- to three-line list items with leading and trailing slots.",
+  "registryDependencies": [
+    "utils"
+  ],
+  "files": [
+    {
+      "path": "registry/mountainview-ui/list.tsx",
+      "content": "\"use client\";\n\nimport * as React from \"react\";\n\nimport { cn } from \"@/lib/utils\";\n\n/**\n * M3 lists: one/two/three-line items with leading icons, avatars,\n * and trailing supporting text.\n */\nfunction List({ className, ...props }: React.ComponentProps<\"ul\">) {\n  return (\n    <ul\n      data-slot=\"list\"\n      className={cn(\"flex w-full flex-col bg-surface py-2\", className)}\n      {...props}\n    />\n  );\n}\n\nfunction ListItem({\n  className,\n  leading,\n  overline,\n  headline,\n  supportingText,\n  trailing,\n  onClick,\n  ...props\n}: Omit<React.ComponentProps<\"li\">, \"onClick\"> & {\n  /** Leading icon or avatar. */\n  leading?: React.ReactNode;\n  overline?: React.ReactNode;\n  headline: React.ReactNode;\n  supportingText?: React.ReactNode;\n  /** Trailing icon, meta text, or control. */\n  trailing?: React.ReactNode;\n  onClick?: React.MouseEventHandler<HTMLElement>;\n}) {\n  const interactive = Boolean(onClick);\n  const Inner = interactive ? \"button\" : \"div\";\n\n  return (\n    <li data-slot=\"list-item\" className={cn(\"flex\", className)} {...props}>\n      <Inner\n        {...(interactive ? { type: \"button\" as const, onClick } : {})}\n        className={cn(\n          \"flex min-h-14 w-full items-center gap-4 px-4 py-2 text-left outline-none\",\n          interactive &&\n            \"cursor-pointer transition-colors state-on-surface focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-primary\"\n        )}\n      >\n        {leading ? (\n          <span className=\"flex shrink-0 items-center justify-center text-on-surface-variant [&_svg]:size-6\">\n            {leading}\n          </span>\n        ) : null}\n        <span className=\"flex min-w-0 flex-1 flex-col\">\n          {overline ? (\n            <span className=\"text-label-m text-on-surface-variant\">{overline}</span>\n          ) : null}\n          <span className=\"truncate text-body-l text-on-surface\">{headline}</span>\n          {supportingText ? (\n            <span className=\"line-clamp-2 text-body-m text-on-surface-variant\">\n              {supportingText}\n            </span>\n          ) : null}\n        </span>\n        {trailing ? (\n          <span className=\"flex shrink-0 items-center text-label-s text-on-surface-variant [&_svg]:size-6\">\n            {trailing}\n          </span>\n        ) : null}\n      </Inner>\n    </li>\n  );\n}\n\nfunction ListDivider({ className, ...props }: React.ComponentProps<\"li\">) {\n  return (\n    <li\n      data-slot=\"list-divider\"\n      role=\"separator\"\n      className={cn(\"my-0 ml-4 h-px bg-outline-variant\", className)}\n      {...props}\n    />\n  );\n}\n\nexport { List, ListDivider, ListItem };\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

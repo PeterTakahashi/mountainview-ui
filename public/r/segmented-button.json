@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "segmented-button",
+  "title": "Segmented Button",
+  "description": "Outlined segments; selected fills with a check.",
+  "dependencies": [
+    "radix-ui",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils"
+  ],
+  "files": [
+    {
+      "path": "registry/mountainview-ui/segmented-button.tsx",
+      "content": "\"use client\";\n\nimport * as React from \"react\";\nimport { ToggleGroup as ToggleGroupPrimitive } from \"radix-ui\";\nimport { CheckIcon } from \"lucide-react\";\n\nimport { cn } from \"@/lib/utils\";\n\n/**\n * M3 segmented buttons: outlined, fully-rounded ends, selected\n * segments filled with secondary-container plus a check.\n */\nfunction SegmentedButton({\n  className,\n  ...props\n}: React.ComponentProps<typeof ToggleGroupPrimitive.Root>) {\n  return (\n    <ToggleGroupPrimitive.Root\n      data-slot=\"segmented-button\"\n      className={cn(\n        \"inline-flex h-10 items-stretch overflow-hidden rounded-full shadow-[inset_0_0_0_1px_var(--outline)] [&>*:not(:first-child)]:shadow-[inset_1px_0_0_0_var(--outline)]\",\n        className\n      )}\n      {...props}\n    />\n  );\n}\n\nfunction SegmentedButtonItem({\n  className,\n  children,\n  ...props\n}: React.ComponentProps<typeof ToggleGroupPrimitive.Item>) {\n  return (\n    <ToggleGroupPrimitive.Item\n      data-slot=\"segmented-button-item\"\n      className={cn(\n        \"flex min-w-12 flex-1 cursor-pointer select-none items-center justify-center gap-2 px-4 text-label-l text-on-surface outline-none transition-colors state-on-surface focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-primary disabled:pointer-events-none disabled:opacity-[0.38] data-[state=on]:bg-secondary-container data-[state=on]:text-on-secondary-container [&_svg]:size-[18px] [&_svg]:shrink-0\",\n        className\n      )}\n      {...props}\n    >\n      <CheckIcon className=\"hidden [[data-state=on]_&]:block\" strokeWidth={2.5} />\n      {children}\n    </ToggleGroupPrimitive.Item>\n  );\n}\n\nexport { SegmentedButton, SegmentedButtonItem };\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

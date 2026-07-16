@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "navigation-rail",
+  "title": "Navigation Rail",
+  "description": "The 80dp vertical rail with a FAB slot.",
+  "registryDependencies": [
+    "utils"
+  ],
+  "files": [
+    {
+      "path": "registry/mountainview-ui/navigation-rail.tsx",
+      "content": "\"use client\";\n\nimport * as React from \"react\";\n\nimport { cn } from \"@/lib/utils\";\n\n/**\n * M3 navigation rail: an 80dp vertical strip with pill-indicator\n * destinations and an optional FAB slot at the top.\n */\nconst RailContext = React.createContext<{\n  selected?: string;\n  onSelect?: (value: string) => void;\n}>({});\n\nfunction NavigationRail({\n  className,\n  selected,\n  onSelect,\n  header,\n  children,\n  ...props\n}: Omit<React.ComponentProps<\"nav\">, \"onSelect\"> & {\n  selected?: string;\n  onSelect?: (value: string) => void;\n  /** Slot above the destinations, typically a FAB. */\n  header?: React.ReactNode;\n}) {\n  return (\n    <RailContext.Provider value={{ selected, onSelect }}>\n      <nav\n        data-slot=\"navigation-rail\"\n        className={cn(\n          \"flex h-full w-20 shrink-0 flex-col items-center gap-3 bg-surface py-4\",\n          className\n        )}\n        {...props}\n      >\n        {header ? <div className=\"mb-4\">{header}</div> : null}\n        <div className=\"flex flex-col items-center gap-3\">{children}</div>\n      </nav>\n    </RailContext.Provider>\n  );\n}\n\nfunction NavigationRailItem({\n  className,\n  value,\n  icon,\n  children,\n  ...props\n}: Omit<React.ComponentProps<\"button\">, \"value\"> & {\n  value: string;\n  icon: React.ReactNode;\n}) {\n  const { selected, onSelect } = React.useContext(RailContext);\n  const active = selected === value;\n\n  return (\n    <button\n      type=\"button\"\n      data-slot=\"navigation-rail-item\"\n      data-selected={active || undefined}\n      onClick={() => onSelect?.(value)}\n      className={cn(\n        \"group flex cursor-pointer select-none flex-col items-center gap-1 outline-none focus-visible:ring-2 focus-visible:ring-primary\",\n        className\n      )}\n      {...props}\n    >\n      <span\n        className={cn(\n          \"flex h-8 w-14 items-center justify-center rounded-full text-on-surface-variant transition-colors group-hover:bg-[color-mix(in_srgb,var(--on-surface)_8%,transparent)] [&_svg]:size-6\",\n          active && \"bg-secondary-container text-on-secondary-container\"\n        )}\n      >\n        {icon}\n      </span>\n      <span\n        className={cn(\n          \"text-label-m\",\n          active ? \"text-on-surface\" : \"text-on-surface-variant\"\n        )}\n      >\n        {children}\n      </span>\n    </button>\n  );\n}\n\nexport { NavigationRail, NavigationRailItem };\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}
