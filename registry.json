@@ -576,6 +576,24 @@
           "type": "registry:ui"
         }
       ]
+    },
+    {
+      "name": "skill",
+      "type": "registry:item",
+      "title": "Agent Skill",
+      "description": "Claude Code skill that teaches an AI agent how to install and compose mountainview-ui: setup, M3 tokens, conventions, composition patterns, pitfalls, and the full component catalog.",
+      "files": [
+        {
+          "path": "skills/mountainview-ui/SKILL.md",
+          "type": "registry:file",
+          "target": "~/.claude/skills/mountainview-ui/SKILL.md"
+        },
+        {
+          "path": "skills/mountainview-ui/references/components.md",
+          "type": "registry:file",
+          "target": "~/.claude/skills/mountainview-ui/references/components.md"
+        }
+      ]
     }
   ]
 }

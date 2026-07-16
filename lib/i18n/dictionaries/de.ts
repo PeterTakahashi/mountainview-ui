@@ -28,7 +28,8 @@ export const de: Dict = {
     "components": "Komponenten",
     "introduction": "Einführung",
     "installation": "Installation",
-    "theming": "Theming"
+    "theming": "Theming",
+    "skills": "Skills"
   },
   "intro": {
     "title": "Einführung",
@@ -105,5 +106,25 @@ export const de: Dict = {
     "time-picker": "Eingabevariante mit zwei Feldern und AM/PM.",
     "tooltip": "Plain- und Rich-Tooltips.",
     "top-app-bar": "64-dp-Leiste, die beim Scrollen tönt."
+  },
+  "skills": {
+    "title": "Skills",
+    "lead": "Bring deinem KI-Agenten bei, mit mountainview-ui zu bauen.",
+    "whatTitle": "Was ist ein Skill?",
+    "whatBody": "Ein Skill ist ein Satz von Anweisungen, den ein KI-Coding-Agent (wie Claude Code) lädt, wenn eine Aufgabe dazu passt. Der mountainview-ui-Skill lehrt den Agenten die korrekte Einrichtung, die richtigen Tokens und Konventionen sowie die Exporte jeder Komponente — damit generierter Code beim ersten Versuch nach Material 3 aussieht.",
+    "learnsTitle": "Was der Agent lernt",
+    "learns": [
+      "Die Einrichtungsreihenfolge: shadcn init, zuerst theme.json, tw-animate-css, CSS-Importe.",
+      "Den Token-Spickzettel: Farbrollen, die 15-stufige Typoskala, Form, Elevation und State-Layer.",
+      "M3-Konventionen: State-Layer statt Farbwechsel, Pill-Buttons, semantische Elevation.",
+      "Kompositionsmuster: App-Shells, Bottom-Navigation mit FAB, snackbar(), Floating Labels.",
+      "Den vollständigen Komponentenkatalog mit Slugs, Exporten und Installationsbefehlen."
+    ],
+    "installCliTitle": "Mit der shadcn CLI installieren",
+    "installCliBody": "Der Skill wird als Registry-Item ausgeliefert. Im Projekt landet er unter .claude/skills/, wo Claude Code ihn automatisch aufnimmt:",
+    "installUserTitle": "Benutzerweit installieren",
+    "installUserBody": "Um den Skill in jedem Projekt verfügbar zu machen, kopiere ihn in dein Benutzer-Skills-Verzeichnis:",
+    "contentsTitle": "Inhalt",
+    "contentsBody": "Zwei Dateien: SKILL.md (Einrichtung, Tokens, Konventionen, Muster, Fallstricke) und references/components.md (der generierte Katalog aller Komponenten)."
   }
 };

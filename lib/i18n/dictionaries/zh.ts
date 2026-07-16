@@ -28,7 +28,8 @@ export const zh: Dict = {
     "components": "组件",
     "introduction": "介绍",
     "installation": "安装",
-    "theming": "主题"
+    "theming": "主题",
+    "skills": "技能"
   },
   "intro": {
     "title": "介绍",
@@ -105,5 +106,25 @@ export const zh: Dict = {
     "time-picker": "两位数字段+AM/PM 的输入式时间选择。",
     "tooltip": "plain 与 rich 两种提示。",
     "top-app-bar": "滚动时着色的 64dp 顶栏。"
+  },
+  "skills": {
+    "title": "技能",
+    "lead": "教你的 AI 代理使用 mountainview-ui 进行开发。",
+    "whatTitle": "什么是技能?",
+    "whatBody": "技能是 AI 编码代理(如 Claude Code)在任务匹配时加载的一组指令。mountainview-ui 技能教会代理如何正确初始化库、使用哪些令牌与规范,以及每个组件的导出 — 让生成的代码第一次就像 Material 3。",
+    "learnsTitle": "代理会学到什么",
+    "learns": [
+      "初始化顺序:shadcn init、先装 theme.json、tw-animate-css、CSS 引入。",
+      "令牌速查:颜色角色、15 级字体阶梯、形状、海拔与状态层。",
+      "M3 规范:用状态层而非换色、药丸按钮、语义化海拔。",
+      "组合模式:应用外壳、带 FAB 的底部导航、snackbar()、浮动标签。",
+      "带 slug、导出与安装命令的完整组件目录。"
+    ],
+    "installCliTitle": "用 shadcn CLI 安装",
+    "installCliBody": "技能以注册表条目分发。在项目中它会放到 .claude/skills/ 下,Claude Code 会自动加载:",
+    "installUserTitle": "安装到用户级",
+    "installUserBody": "要在所有项目中使用该技能,把它复制到用户级技能目录:",
+    "contentsTitle": "包含内容",
+    "contentsBody": "两个文件:SKILL.md(初始化、令牌、规范、模式、陷阱)与 references/components.md(自动生成的组件目录)。"
   }
 };

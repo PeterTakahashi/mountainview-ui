@@ -32,11 +32,26 @@ export type Dict = {
     introduction: string;
     installation: string;
     theming: string;
+    skills: string;
   };
   intro: { title: string; lead: string; whyTitle: string; whyP1: string; whyP2: string; componentsTitle: string };
   install: { title: string; lead: string; s1: string; s1p: string; s2: string; s2p1: string; s2p2: string; s3: string; s3p: string };
   theming: { title: string; lead: string; colors: string; colorsP: string; dynamic: string; dynamicP: string; dark: string; darkP: string; type: string; typeP: string };
   component: { installation: string; source: string; themeNote1: string; themeNoteLink: string; themeNote2: string };
   gallery: { title: string; lead: string };
+  skills: {
+    title: string;
+    lead: string;
+    whatTitle: string;
+    whatBody: string;
+    learnsTitle: string;
+    learns: string[];
+    installCliTitle: string;
+    installCliBody: string;
+    installUserTitle: string;
+    installUserBody: string;
+    contentsTitle: string;
+    contentsBody: string;
+  };
   descriptions?: Record<string, string>;
 };

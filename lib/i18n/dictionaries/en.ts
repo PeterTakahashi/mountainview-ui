@@ -28,7 +28,8 @@ export const en: Dict = {
     "components": "Components",
     "introduction": "Introduction",
     "installation": "Installation",
-    "theming": "Theming"
+    "theming": "Theming",
+    "skills": "Skills"
   },
   "intro": {
     "title": "Introduction",
@@ -71,5 +72,25 @@ export const en: Dict = {
   "gallery": {
     "title": "Components",
     "lead": "All {n} components, live. Everything below is interactive — click a title for install instructions and source."
+  },
+  "skills": {
+    "title": "Skills",
+    "lead": "Teach your AI agent to build with mountainview-ui.",
+    "whatTitle": "What is a skill?",
+    "whatBody": "A skill is a set of instructions an AI coding agent (like Claude Code) loads when a task matches it. The mountainview-ui skill teaches the agent how to set the library up correctly, which tokens and conventions to use, and what every component exports — so generated code looks like Material 3 on the first try.",
+    "learnsTitle": "What the agent learns",
+    "learns": [
+      "The setup order: shadcn init, theme.json first, tw-animate-css, CSS imports.",
+      "The token cheatsheet: color roles, the 15-step type scale, shape, elevation, and state layers.",
+      "M3 conventions: state layers over color swaps, pill buttons, semantic elevation.",
+      "Composition patterns: app shells, bottom navigation with a FAB, snackbar(), floating labels.",
+      "The full component catalog with slugs, exports, and install commands."
+    ],
+    "installCliTitle": "Install with the shadcn CLI",
+    "installCliBody": "The skill ships as a registry item. In a project, this places it under .claude/skills/ where Claude Code picks it up automatically:",
+    "installUserTitle": "Install user-wide",
+    "installUserBody": "To make the skill available in every project, copy it into your user-level skills directory:",
+    "contentsTitle": "What's inside",
+    "contentsBody": "Two files: SKILL.md (setup, tokens, conventions, patterns, pitfalls) and references/components.md (the generated catalog of all components)."
   }
 };

@@ -28,7 +28,8 @@ export const ja: Dict = {
     "components": "コンポーネント",
     "introduction": "イントロダクション",
     "installation": "インストール",
-    "theming": "テーマ"
+    "theming": "テーマ",
+    "skills": "スキル"
   },
   "intro": {
     "title": "イントロダクション",
@@ -105,5 +106,25 @@ export const ja: Dict = {
     "time-picker": "2桁フィールド+AM/PMの入力型タイムピッカー。",
     "tooltip": "plain(inverse-surface)とrich(コンテナ)の2種。",
     "top-app-bar": "スクロール時に着色する64dpスモールアプリバー。"
+  },
+  "skills": {
+    "title": "スキル",
+    "lead": "AIエージェントに mountainview-ui での開発を教えましょう。",
+    "whatTitle": "スキルとは?",
+    "whatBody": "スキルとは、AIコーディングエージェント(Claude Code など)がタスクに合致したときに読み込む指示書です。mountainview-ui スキルは、ライブラリの正しいセットアップ手順、使うべきトークンと規約、全コンポーネントのエクスポートをエージェントに教えます — 生成されるコードが最初から Material 3 らしくなるように。",
+    "learnsTitle": "エージェントが学ぶこと",
+    "learns": [
+      "セットアップ手順: shadcn init → theme.json を最初に → tw-animate-css → CSS インポート。",
+      "トークン早見表: カラーロール、15段階の型スケール、シェイプ、エレベーション、ステートレイヤー。",
+      "M3 の規約: 色の差し替えではなくステートレイヤー、ピル型ボタン、意味を持つエレベーション。",
+      "組み合わせパターン: アプリシェル、FAB付きボトムナビゲーション、snackbar()、フローティングラベル。",
+      "スラッグ・エクスポート・インストールコマンド付きの全コンポーネントカタログ。"
+    ],
+    "installCliTitle": "shadcn CLI でインストール",
+    "installCliBody": "スキルはレジストリアイテムとして配布されます。プロジェクト内では .claude/skills/ に配置され、Claude Code が自動で読み込みます:",
+    "installUserTitle": "ユーザー全体にインストール",
+    "installUserBody": "すべてのプロジェクトでスキルを使うには、ユーザーレベルのスキルディレクトリにコピーします:",
+    "contentsTitle": "中身",
+    "contentsBody": "2ファイル構成: SKILL.md(セットアップ・トークン・規約・パターン・落とし穴)と references/components.md(全コンポーネントの自動生成カタログ)。"
   }
 };

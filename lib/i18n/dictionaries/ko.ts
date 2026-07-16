@@ -28,7 +28,8 @@ export const ko: Dict = {
     "components": "컴포넌트",
     "introduction": "소개",
     "installation": "설치",
-    "theming": "테마"
+    "theming": "테마",
+    "skills": "스킬"
   },
   "intro": {
     "title": "소개",
@@ -105,5 +106,25 @@ export const ko: Dict = {
     "time-picker": "두 자리 필드+AM/PM 입력형 타임 피커.",
     "tooltip": "plain과 rich 두 가지 툴팁.",
     "top-app-bar": "스크롤 시 틴트되는 64dp 상단 바."
+  },
+  "skills": {
+    "title": "스킬",
+    "lead": "AI 에이전트에게 mountainview-ui 개발을 가르치세요.",
+    "whatTitle": "스킬이란?",
+    "whatBody": "스킬은 AI 코딩 에이전트(Claude Code 등)가 작업이 일치할 때 로드하는 지침 모음입니다. mountainview-ui 스킬은 라이브러리의 올바른 설정 순서, 사용할 토큰과 규칙, 모든 컴포넌트의 내보내기를 에이전트에게 가르쳐 — 생성되는 코드가 처음부터 Material 3답게 나오게 합니다.",
+    "learnsTitle": "에이전트가 배우는 것",
+    "learns": [
+      "설정 순서: shadcn init → theme.json 먼저 → tw-animate-css → CSS 임포트.",
+      "토큰 치트시트: 컬러 롤, 15단계 타입 스케일, 셰이프, 엘리베이션, 상태 레이어.",
+      "M3 규칙: 색 교체가 아닌 상태 레이어, 필 버튼, 의미 있는 엘리베이션.",
+      "조합 패턴: 앱 셸, FAB 있는 하단 내비게이션, snackbar(), 플로팅 레이블.",
+      "슬러그·내보내기·설치 명령이 포함된 전체 컴포넌트 카탈로그."
+    ],
+    "installCliTitle": "shadcn CLI로 설치",
+    "installCliBody": "스킬은 레지스트리 아이템으로 배포됩니다. 프로젝트에서는 .claude/skills/ 아래에 놓여 Claude Code가 자동으로 인식합니다:",
+    "installUserTitle": "사용자 전역 설치",
+    "installUserBody": "모든 프로젝트에서 스킬을 쓰려면 사용자 레벨 스킬 디렉터리로 복사하세요:",
+    "contentsTitle": "구성",
+    "contentsBody": "두 파일: SKILL.md(설정·토큰·규칙·패턴·함정)와 references/components.md(자동 생성된 컴포넌트 카탈로그)."
   }
 };

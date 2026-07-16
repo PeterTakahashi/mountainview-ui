@@ -28,7 +28,8 @@ export const fr: Dict = {
     "components": "Composants",
     "introduction": "Introduction",
     "installation": "Installation",
-    "theming": "Thème"
+    "theming": "Thème",
+    "skills": "Skills"
   },
   "intro": {
     "title": "Introduction",
@@ -105,5 +106,25 @@ export const fr: Dict = {
     "time-picker": "Variante saisie : deux champs et AM/PM.",
     "tooltip": "Infobulles plain et rich.",
     "top-app-bar": "Barre 64 dp qui se teinte au défilement."
+  },
+  "skills": {
+    "title": "Skills",
+    "lead": "Apprenez à votre agent IA à construire avec mountainview-ui.",
+    "whatTitle": "Qu'est-ce qu'un skill ?",
+    "whatBody": "Un skill est un ensemble d'instructions qu'un agent de codage IA (comme Claude Code) charge quand une tâche correspond. Le skill mountainview-ui enseigne à l'agent la bonne installation, les tokens et conventions à utiliser, et les exports de chaque composant — pour que le code généré ressemble à Material 3 du premier coup.",
+    "learnsTitle": "Ce que l'agent apprend",
+    "learns": [
+      "L'ordre d'installation : shadcn init, theme.json d'abord, tw-animate-css, imports CSS.",
+      "L'antisèche des tokens : rôles de couleur, échelle typographique à 15 crans, formes, élévation, couches d'état.",
+      "Les conventions M3 : couches d'état plutôt que changements de couleur, boutons pilule, élévation sémantique.",
+      "Les motifs de composition : coquilles d'app, navigation basse avec FAB, snackbar(), étiquettes flottantes.",
+      "Le catalogue complet des composants avec slugs, exports et commandes d'installation."
+    ],
+    "installCliTitle": "Installer avec la CLI shadcn",
+    "installCliBody": "Le skill est distribué comme élément de registre. Dans un projet, il se place sous .claude/skills/ où Claude Code le charge automatiquement :",
+    "installUserTitle": "Installer au niveau utilisateur",
+    "installUserBody": "Pour rendre le skill disponible dans tous vos projets, copiez-le dans votre répertoire de skills utilisateur :",
+    "contentsTitle": "Contenu",
+    "contentsBody": "Deux fichiers : SKILL.md (installation, tokens, conventions, motifs, pièges) et references/components.md (le catalogue généré de tous les composants)."
   }
 };
