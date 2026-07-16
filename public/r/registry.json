@@ -13,6 +13,10 @@
           "path": "registry/theme.css",
           "type": "registry:file",
           "target": "~/mountainview-ui-theme.css"
+        },
+        {
+          "path": "lib/utils.ts",
+          "type": "registry:lib"
         }
       ]
     },
