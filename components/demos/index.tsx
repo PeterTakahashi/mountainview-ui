@@ -23,7 +23,28 @@ import TabsDemo from "@/components/demos/tabs-demo";
 import TextFieldDemo from "@/components/demos/text-field-demo";
 import TopAppBarDemo from "@/components/demos/top-app-bar-demo";
 
+import BannerDemo from "@/components/demos/banner-demo";
+import BottomAppBarDemo from "@/components/demos/bottom-app-bar-demo";
+import CarouselDemo from "@/components/demos/carousel-demo";
+import DatePickerDemo from "@/components/demos/date-picker-demo";
+import DividerDemo from "@/components/demos/divider-demo";
+import NavigationDrawerDemo from "@/components/demos/navigation-drawer-demo";
+import SearchBarDemo from "@/components/demos/search-bar-demo";
+import SideSheetDemo from "@/components/demos/side-sheet-demo";
+import TimePickerDemo from "@/components/demos/time-picker-demo";
+import TooltipDemo from "@/components/demos/tooltip-demo";
+
 export const demos: Record<string, React.ComponentType> = {
+  "banner": BannerDemo,
+  "bottom-app-bar": BottomAppBarDemo,
+  "carousel": CarouselDemo,
+  "date-picker": DatePickerDemo,
+  "divider": DividerDemo,
+  "navigation-drawer": NavigationDrawerDemo,
+  "search-bar": SearchBarDemo,
+  "side-sheet": SideSheetDemo,
+  "time-picker": TimePickerDemo,
+  "tooltip": TooltipDemo,
   badge: BadgeDemo,
   "bottom-sheet": BottomSheetDemo,
   button: ButtonDemo,

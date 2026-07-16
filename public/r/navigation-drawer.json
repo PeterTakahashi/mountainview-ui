@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "navigation-drawer",
+  "title": "Navigation Drawer",
+  "description": "Standard and modal drawers with pill indicators.",
+  "dependencies": [
+    "radix-ui"
+  ],
+  "registryDependencies": [
+    "utils"
+  ],
+  "files": [
+    {
+      "path": "registry/mountainview-ui/navigation-drawer.tsx",
+      "content": "\"use client\";\n\nimport * as React from \"react\";\nimport { Dialog as DrawerPrimitive } from \"radix-ui\";\n\nimport { cn } from \"@/lib/utils\";\n\n/**\n * M3 navigation drawer. `NavigationDrawer` renders the standard\n * (in-layout) variant; `ModalNavigationDrawer` slides over a scrim.\n * Items use the rounded-end active indicator.\n */\nfunction NavigationDrawer({\n  className,\n  ...props\n}: React.ComponentProps<\"nav\">) {\n  return (\n    <nav\n      data-slot=\"navigation-drawer\"\n      className={cn(\n        \"flex h-full w-[300px] shrink-0 flex-col gap-0.5 overflow-y-auto rounded-r-lg bg-surface-low px-3 py-4\",\n        className\n      )}\n      {...props}\n    />\n  );\n}\n\nfunction ModalNavigationDrawer({\n  trigger,\n  children,\n  ...props\n}: React.ComponentProps<typeof DrawerPrimitive.Root> & {\n  trigger: React.ReactNode;\n}) {\n  return (\n    <DrawerPrimitive.Root data-slot=\"modal-navigation-drawer\" {...props}>\n      <DrawerPrimitive.Trigger asChild>{trigger}</DrawerPrimitive.Trigger>\n      <DrawerPrimitive.Portal>\n        <DrawerPrimitive.Overlay className=\"fixed inset-0 z-50 bg-scrim/40 data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=closed]:animate-out data-[state=closed]:fade-out-0\" />\n        <DrawerPrimitive.Content\n          className=\"fixed inset-y-0 left-0 z-50 flex w-[300px] flex-col gap-0.5 overflow-y-auto rounded-r-lg bg-surface-low px-3 py-4 outline-none data-[state=open]:animate-in data-[state=open]:slide-in-from-left data-[state=open]:duration-300 data-[state=closed]:animate-out data-[state=closed]:slide-out-to-left data-[state=closed]:duration-200\"\n        >\n          <DrawerPrimitive.Title className=\"sr-only\">\n            Navigation\n          </DrawerPrimitive.Title>\n          {children}\n        </DrawerPrimitive.Content>\n      </DrawerPrimitive.Portal>\n    </DrawerPrimitive.Root>\n  );\n}\n\nfunction NavigationDrawerHeadline({\n  className,\n  ...props\n}: React.ComponentProps<\"p\">) {\n  return (\n    <p\n      data-slot=\"navigation-drawer-headline\"\n      className={cn(\"px-4 pb-2 pt-4 text-title-s text-on-surface-variant\", className)}\n      {...props}\n    />\n  );\n}\n\nfunction NavigationDrawerItem({\n  className,\n  icon,\n  badge,\n  active,\n  children,\n  ...props\n}: React.ComponentProps<\"button\"> & {\n  icon?: React.ReactNode;\n  badge?: React.ReactNode;\n  active?: boolean;\n}) {\n  return (\n    <button\n      type=\"button\"\n      data-slot=\"navigation-drawer-item\"\n      data-active={active || undefined}\n      className={cn(\n        \"flex h-14 w-full cursor-pointer select-none items-center gap-3 rounded-full px-4 text-left text-label-l outline-none transition-colors focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-primary [&_svg]:size-6 [&_svg]:shrink-0\",\n        active\n          ? \"bg-secondary-container text-on-secondary-container\"\n          : \"text-on-surface-variant state-on-surface\",\n        className\n      )}\n      {...props}\n    >\n      {icon}\n      <span className=\"min-w-0 flex-1 truncate\">{children}</span>\n      {badge ? <span className=\"shrink-0 text-label-l\">{badge}</span> : null}\n    </button>\n  );\n}\n\nexport {\n  ModalNavigationDrawer,\n  NavigationDrawer,\n  NavigationDrawerHeadline,\n  NavigationDrawerItem,\n};\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

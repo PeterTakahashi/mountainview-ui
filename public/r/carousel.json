@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "carousel",
+  "title": "Carousel",
+  "description": "Multi-browse hero strip with rounded-xl snap items.",
+  "registryDependencies": [
+    "utils"
+  ],
+  "files": [
+    {
+      "path": "registry/mountainview-ui/carousel.tsx",
+      "content": "\"use client\";\n\nimport * as React from \"react\";\n\nimport { cn } from \"@/lib/utils\";\n\n/**\n * M3 hero carousel: a multi-browse strip of rounded-xl items that\n * snap-scroll, with a large leading item and smaller followers.\n */\nfunction Carousel({ className, ...props }: React.ComponentProps<\"div\">) {\n  return (\n    <div\n      data-slot=\"carousel\"\n      role=\"region\"\n      aria-roledescription=\"carousel\"\n      className={cn(\n        \"flex w-full snap-x snap-mandatory gap-2 overflow-x-auto overscroll-x-contain [scrollbar-width:none] [&::-webkit-scrollbar]:hidden\",\n        className\n      )}\n      {...props}\n    />\n  );\n}\n\nfunction CarouselItem({\n  className,\n  label,\n  children,\n  ...props\n}: React.ComponentProps<\"div\"> & {\n  /** Caption drawn over the bottom edge. */\n  label?: React.ReactNode;\n}) {\n  return (\n    <div\n      data-slot=\"carousel-item\"\n      role=\"group\"\n      aria-roledescription=\"slide\"\n      className={cn(\n        \"relative h-56 w-[min(75%,280px)] shrink-0 snap-start overflow-hidden rounded-xl\",\n        className\n      )}\n      {...props}\n    >\n      {children}\n      {label ? (\n        <span className=\"absolute inset-x-0 bottom-0 bg-gradient-to-t from-scrim/60 to-transparent p-4 pt-10 text-title-m text-white\">\n          {label}\n        </span>\n      ) : null}\n    </div>\n  );\n}\n\nexport { Carousel, CarouselItem };\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

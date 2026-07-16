@@ -1,8 +1,12 @@
 import { clsx, type ClassValue } from "clsx";
 import { extendTailwindMerge } from "tailwind-merge";
 
-// Teach tailwind-merge the M3 type-scale utilities so `text-title-m`
-// (a font-size) never collides with `text-on-primary` (a color).
+/**
+ * The M3 type-scale utilities (text-display-l … text-label-s) must be
+ * registered as font-size classes, otherwise tailwind-merge treats
+ * them as text colors and drops them when combined with e.g.
+ * `text-on-surface`.
+ */
 const twMerge = extendTailwindMerge({
   extend: {
     classGroups: {

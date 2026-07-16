@@ -1,13 +1,18 @@
+"use client";
+
 import Link from "next/link";
 
 import { SiteHeader } from "@/components/site/site-header";
 import { components } from "@/lib/docs";
+import { useI18n } from "@/lib/i18n";
 
 export default function DocsLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const { dict } = useI18n();
+
   return (
     <div className="flex min-h-dvh flex-col">
       <SiteHeader />
@@ -16,15 +21,15 @@ export default function DocsLayout({
           <nav className="flex flex-col gap-6">
             <div className="flex flex-col gap-0.5">
               <p className="px-3 pb-1 text-label-m uppercase tracking-wide text-on-surface-variant">
-                Getting started
+                {dict.sidebar.gettingStarted}
               </p>
-              <SidebarLink href="/docs">Introduction</SidebarLink>
-              <SidebarLink href="/docs/installation">Installation</SidebarLink>
-              <SidebarLink href="/docs/theming">Theming</SidebarLink>
+              <SidebarLink href="/docs">{dict.sidebar.introduction}</SidebarLink>
+              <SidebarLink href="/docs/installation">{dict.sidebar.installation}</SidebarLink>
+              <SidebarLink href="/docs/theming">{dict.sidebar.theming}</SidebarLink>
             </div>
             <div className="flex flex-col gap-0.5">
               <p className="px-3 pb-1 text-label-m uppercase tracking-wide text-on-surface-variant">
-                Components
+                {dict.sidebar.components}
               </p>
               {components.map((c) => (
                 <SidebarLink key={c.slug} href={`/docs/components/${c.slug}`}>

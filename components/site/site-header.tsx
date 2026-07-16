@@ -2,9 +2,11 @@
 
 import Link from "next/link";
 
+import { LanguageSwitcher } from "@/components/site/language-switcher";
 import { ThemeToggle } from "@/components/site/theme-toggle";
 import { IconButton } from "@/registry/mountainview-ui/icon-button";
 import { siteConfig } from "@/lib/docs";
+import { useI18n } from "@/lib/i18n";
 
 function GitHubIcon() {
   return (
@@ -15,6 +17,8 @@ function GitHubIcon() {
 }
 
 export function SiteHeader() {
+  const { dict } = useI18n();
+
   return (
     <header className="sticky top-0 z-40 bg-surface/80 backdrop-blur-xl shadow-[0_1px_0_0_var(--outline-variant)]">
       <div className="mx-auto flex h-16 max-w-6xl items-center gap-6 px-5">
@@ -23,13 +27,17 @@ export function SiteHeader() {
         </Link>
         <nav className="flex items-center gap-4 text-label-l text-on-surface-variant">
           <Link href="/docs" className="transition-colors hover:text-on-surface">
-            Docs
+            {dict.nav.docs}
           </Link>
           <Link href="/components" className="transition-colors hover:text-on-surface">
-            Components
+            {dict.nav.components}
+          </Link>
+          <Link href="/showcases" className="transition-colors hover:text-on-surface">
+            {dict.nav.showcases}
           </Link>
         </nav>
         <div className="ml-auto flex items-center gap-1">
+          <LanguageSwitcher />
           <a
             href={siteConfig.github}
             target="_blank"

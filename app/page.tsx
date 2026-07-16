@@ -7,8 +7,12 @@ import { CodeBlock } from "@/components/site/code-block";
 import { HeroPanel } from "@/components/site/hero-panel";
 import { Button } from "@/registry/mountainview-ui/button";
 import { components, siteConfig } from "@/lib/docs";
+import { useI18n } from "@/lib/i18n";
 
 export default function Home() {
+  const { dict } = useI18n();
+  const l = dict.landing;
+
   return (
     <div className="flex min-h-dvh flex-col">
       <SiteHeader />
@@ -21,27 +25,25 @@ export default function Home() {
           />
           <div className="relative mx-auto flex max-w-4xl flex-col items-center gap-6 px-5 pb-16 pt-20 text-center">
             <h1 className="max-w-2xl text-balance text-display-m sm:text-display-l">
-              Material 3.
+              {l.heroTitle1}
               <br />
-              <span className="text-primary">Yours to own.</span>
+              <span className="text-primary">{l.heroTitle2}</span>
             </h1>
             <p className="max-w-xl text-balance text-title-l text-on-surface-variant">
-              Faithful Material Design 3 components on Tailwind CSS and Radix.
-              Installed as source with the shadcn CLI — every line lands in
-              your repo.
+{l.heroSub}
             </p>
             <div className="flex items-center gap-3">
               <Button size="lg" asChild className="min-w-44">
-                <Link href="/docs/installation">Get started</Link>
+                <Link href="/docs/installation">{l.getStarted}</Link>
               </Button>
               <Button size="lg" variant="tonal" asChild className="min-w-44">
                 <a href={siteConfig.github} target="_blank" rel="noreferrer">
-                  GitHub
+                  {l.github}
                 </a>
               </Button>
             </div>
             <p className="text-body-s text-on-surface-variant">
-              {components.length} components · light & dark · MIT license
+{l.stats.replace("{n}", String(components.length))}
             </p>
           </div>
 
@@ -51,10 +53,9 @@ export default function Home() {
         </section>
 
         <section className="mx-auto flex w-full max-w-4xl flex-col items-center gap-6 px-5 pb-24">
-          <h2 className="text-headline-m">Install like shadcn/ui</h2>
+          <h2 className="text-headline-m">{l.installTitle}</h2>
           <p className="max-w-lg text-center text-body-l text-on-surface-variant">
-            No package to depend on. The CLI copies the component source into
-            your project, styled with Material 3 tokens.
+{l.installSub}
           </p>
           <div className="w-full max-w-xl">
             <CodeBlock
@@ -65,38 +66,23 @@ export default function Home() {
 
         <section className="bg-surface-low">
           <div className="mx-auto grid max-w-4xl gap-10 px-5 py-20 sm:grid-cols-3">
-            <div className="flex flex-col gap-2">
-              <h3 className="text-title-m">Spec-faithful tokens</h3>
-              <p className="text-body-m text-on-surface-variant">
-                The baseline M3 scheme — primary through surface-container
-                tiers — plus the full type scale, shape system, elevation, and
-                8%/12% state layers.
-              </p>
-            </div>
-            <div className="flex flex-col gap-2">
-              <h3 className="text-title-m">Own the code</h3>
-              <p className="text-body-m text-on-surface-variant">
-                Components are files in your repo, not a dependency. Reshape a
-                chip or rebuild a sheet without fighting a library.
-              </p>
-            </div>
-            <div className="flex flex-col gap-2">
-              <h3 className="text-title-m">Dynamic-color ready</h3>
-              <p className="text-body-m text-on-surface-variant">
-                Every color is a CSS variable. Swap the baseline palette for
-                your own Material You scheme and everything re-tints.
-              </p>
-            </div>
+            {[
+              [l.p1t, l.p1b],
+              [l.p2t, l.p2b],
+              [l.p3t, l.p3b],
+            ].map(([t, b]) => (
+              <div key={t} className="flex flex-col gap-2">
+                <h3 className="text-title-m">{t}</h3>
+                <p className="text-body-m text-on-surface-variant">{b}</p>
+              </div>
+            ))}
           </div>
         </section>
       </main>
 
       <footer className="shadow-[0_-1px_0_0_var(--outline-variant)]">
         <div className="mx-auto flex max-w-4xl flex-wrap items-center justify-between gap-2 px-5 py-8 text-body-s text-on-surface-variant">
-          <span>
-            mountainview-ui — an independent open-source project, not
-            affiliated with Google LLC.
-          </span>
+          <span>{l.footer}</span>
           <a href={siteConfig.github} className="hover:text-on-surface">
             GitHub
           </a>

@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "side-sheet",
+  "title": "Side Sheet",
+  "description": "400dp trailing-edge panel with title and close.",
+  "dependencies": [
+    "radix-ui",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils"
+  ],
+  "files": [
+    {
+      "path": "registry/mountainview-ui/side-sheet.tsx",
+      "content": "\"use client\";\n\nimport * as React from \"react\";\nimport { Dialog as SheetPrimitive } from \"radix-ui\";\nimport { XIcon } from \"lucide-react\";\n\nimport { cn } from \"@/lib/utils\";\n\n/** M3 side sheet: 400dp panel from the trailing edge. */\nfunction SideSheet({\n  ...props\n}: React.ComponentProps<typeof SheetPrimitive.Root>) {\n  return <SheetPrimitive.Root data-slot=\"side-sheet\" {...props} />;\n}\n\nfunction SideSheetTrigger({\n  ...props\n}: React.ComponentProps<typeof SheetPrimitive.Trigger>) {\n  return <SheetPrimitive.Trigger data-slot=\"side-sheet-trigger\" {...props} />;\n}\n\nfunction SideSheetClose({\n  ...props\n}: React.ComponentProps<typeof SheetPrimitive.Close>) {\n  return <SheetPrimitive.Close data-slot=\"side-sheet-close\" {...props} />;\n}\n\nfunction SideSheetContent({\n  className,\n  title,\n  children,\n  ...props\n}: React.ComponentProps<typeof SheetPrimitive.Content> & {\n  title: React.ReactNode;\n}) {\n  return (\n    <SheetPrimitive.Portal>\n      <SheetPrimitive.Overlay className=\"fixed inset-0 z-50 bg-scrim/40 data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=closed]:animate-out data-[state=closed]:fade-out-0\" />\n      <SheetPrimitive.Content\n        data-slot=\"side-sheet-content\"\n        className={cn(\n          \"fixed inset-y-0 right-0 z-50 flex w-[min(400px,calc(100vw-56px))] flex-col rounded-l-lg bg-surface-low outline-none data-[state=open]:animate-in data-[state=open]:slide-in-from-right data-[state=open]:duration-300 data-[state=closed]:animate-out data-[state=closed]:slide-out-to-right data-[state=closed]:duration-200\",\n          className\n        )}\n        {...props}\n      >\n        <div className=\"flex items-center gap-3 p-4 pl-6\">\n          <SheetPrimitive.Title className=\"min-w-0 flex-1 truncate text-title-l text-on-surface\">\n            {title}\n          </SheetPrimitive.Title>\n          <SheetPrimitive.Close\n            aria-label=\"Close\"\n            className=\"flex size-12 cursor-pointer items-center justify-center rounded-full text-on-surface-variant outline-none state-on-surface focus-visible:ring-2 focus-visible:ring-primary\"\n          >\n            <XIcon className=\"size-6\" />\n          </SheetPrimitive.Close>\n        </div>\n        <div className=\"min-h-0 flex-1 overflow-y-auto px-6 pb-6\">{children}</div>\n      </SheetPrimitive.Content>\n    </SheetPrimitive.Portal>\n  );\n}\n\nexport { SideSheet, SideSheetClose, SideSheetContent, SideSheetTrigger };\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

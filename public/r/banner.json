@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "banner",
+  "title": "Banner",
+  "description": "Inline contained banner with icon and text actions.",
+  "registryDependencies": [
+    "utils"
+  ],
+  "files": [
+    {
+      "path": "registry/mountainview-ui/banner.tsx",
+      "content": "\"use client\";\n\nimport * as React from \"react\";\n\nimport { cn } from \"@/lib/utils\";\n\n/**\n * Inline contained banner, Gmail-style: icon, message, and\n * trailing text actions on secondary-container.\n */\nfunction Banner({\n  className,\n  icon,\n  actions,\n  variant = \"info\",\n  children,\n  ...props\n}: React.ComponentProps<\"div\"> & {\n  icon?: React.ReactNode;\n  /** Trailing action row, typically text Buttons. */\n  actions?: React.ReactNode;\n  variant?: \"info\" | \"error\";\n}) {\n  return (\n    <div\n      data-slot=\"banner\"\n      role=\"status\"\n      className={cn(\n        \"flex w-full flex-wrap items-center gap-3 rounded-md px-4 py-3\",\n        variant === \"info\" && \"bg-secondary-container text-on-secondary-container\",\n        variant === \"error\" && \"bg-error-container text-on-error-container\",\n        className\n      )}\n      {...props}\n    >\n      {icon ? (\n        <span className=\"shrink-0 [&_svg]:size-5\">{icon}</span>\n      ) : null}\n      <p className=\"min-w-0 flex-1 text-body-m\">{children}</p>\n      {actions ? (\n        <span className=\"ml-auto flex shrink-0 items-center gap-1\">{actions}</span>\n      ) : null}\n    </div>\n  );\n}\n\nexport { Banner };\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

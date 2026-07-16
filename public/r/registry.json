@@ -36,6 +36,36 @@
       ]
     },
     {
+      "name": "banner",
+      "type": "registry:ui",
+      "title": "Banner",
+      "description": "Inline contained banner with icon and text actions.",
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/mountainview-ui/banner.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "bottom-app-bar",
+      "type": "registry:ui",
+      "title": "Bottom App Bar",
+      "description": "80dp action bar with a trailing FAB slot.",
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/mountainview-ui/bottom-app-bar.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "bottom-sheet",
       "type": "registry:ui",
       "title": "Bottom Sheet",
@@ -91,6 +121,21 @@
       ]
     },
     {
+      "name": "carousel",
+      "type": "registry:ui",
+      "title": "Carousel",
+      "description": "Multi-browse hero strip with rounded-xl snap items.",
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/mountainview-ui/carousel.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "checkbox",
       "type": "registry:ui",
       "title": "Checkbox",
@@ -129,6 +174,24 @@
       ]
     },
     {
+      "name": "date-picker",
+      "type": "registry:ui",
+      "title": "Date Picker",
+      "description": "Docked calendar with today outline and filled selection.",
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/mountainview-ui/date-picker.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "dependencies": [
+        "lucide-react"
+      ]
+    },
+    {
       "name": "dialog",
       "type": "registry:ui",
       "title": "Dialog",
@@ -144,6 +207,21 @@
       ],
       "dependencies": [
         "radix-ui"
+      ]
+    },
+    {
+      "name": "divider",
+      "type": "registry:ui",
+      "title": "Divider",
+      "description": "1dp outline-variant rule, full-width or inset.",
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/mountainview-ui/divider.tsx",
+          "type": "registry:ui"
+        }
       ]
     },
     {
@@ -235,6 +313,24 @@
       ]
     },
     {
+      "name": "navigation-drawer",
+      "type": "registry:ui",
+      "title": "Navigation Drawer",
+      "description": "Standard and modal drawers with pill indicators.",
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/mountainview-ui/navigation-drawer.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "dependencies": [
+        "radix-ui"
+      ]
+    },
+    {
       "name": "navigation-rail",
       "type": "registry:ui",
       "title": "Navigation Rail",
@@ -286,6 +382,24 @@
       ]
     },
     {
+      "name": "search-bar",
+      "type": "registry:ui",
+      "title": "Search Bar",
+      "description": "Full-round search bar expanding into a suggestion view.",
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/mountainview-ui/search-bar.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "dependencies": [
+        "lucide-react"
+      ]
+    },
+    {
       "name": "segmented-button",
       "type": "registry:ui",
       "title": "Segmented Button",
@@ -296,6 +410,25 @@
       "files": [
         {
           "path": "registry/mountainview-ui/segmented-button.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "dependencies": [
+        "radix-ui",
+        "lucide-react"
+      ]
+    },
+    {
+      "name": "side-sheet",
+      "type": "registry:ui",
+      "title": "Side Sheet",
+      "description": "400dp trailing-edge panel with title and close.",
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/mountainview-ui/side-sheet.tsx",
           "type": "registry:ui"
         }
       ],
@@ -394,6 +527,39 @@
       ],
       "dependencies": [
         "class-variance-authority"
+      ]
+    },
+    {
+      "name": "time-picker",
+      "type": "registry:ui",
+      "title": "Time Picker",
+      "description": "Input-variant picker with 2-digit fields and AM/PM.",
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/mountainview-ui/time-picker.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "tooltip",
+      "type": "registry:ui",
+      "title": "Tooltip",
+      "description": "Plain inverse-surface pill and rich container variants.",
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "registry/mountainview-ui/tooltip.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "dependencies": [
+        "radix-ui"
       ]
     },
     {

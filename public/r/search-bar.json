@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "search-bar",
+  "title": "Search Bar",
+  "description": "Full-round search bar expanding into a suggestion view.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils"
+  ],
+  "files": [
+    {
+      "path": "registry/mountainview-ui/search-bar.tsx",
+      "content": "\"use client\";\n\nimport * as React from \"react\";\nimport { SearchIcon, XIcon } from \"lucide-react\";\n\nimport { cn } from \"@/lib/utils\";\n\n/**\n * M3 search bar: a 56dp full-round field on surface-container-high\n * that expands into a search view with a suggestion list.\n */\nfunction SearchBar({\n  className,\n  leading,\n  trailing,\n  suggestions,\n  onValueChange,\n  ...props\n}: Omit<React.ComponentProps<\"input\">, \"children\"> & {\n  leading?: React.ReactNode;\n  trailing?: React.ReactNode;\n  /** Suggestion panel shown while the bar has focus. */\n  suggestions?: React.ReactNode;\n  onValueChange?: (value: string) => void;\n}) {\n  const [open, setOpen] = React.useState(false);\n  const [value, setValue] = React.useState(String(props.defaultValue ?? \"\"));\n  const inputRef = React.useRef<HTMLInputElement>(null);\n\n  return (\n    <div data-slot=\"search-bar\" className={cn(\"relative w-full\", className)}>\n      <div\n        className={cn(\n          \"flex h-14 w-full items-center gap-3 bg-surface-high px-4 transition-[border-radius] duration-200\",\n          open && suggestions ? \"rounded-t-xl\" : \"rounded-full\"\n        )}\n      >\n        <span className=\"shrink-0 text-on-surface-variant [&_svg]:size-6\">\n          {leading ?? <SearchIcon />}\n        </span>\n        <input\n          ref={inputRef}\n          data-slot=\"search-bar-input\"\n          className=\"h-full w-full bg-transparent text-body-l text-on-surface outline-none placeholder:text-on-surface-variant\"\n          onFocus={(e) => {\n            setOpen(true);\n            props.onFocus?.(e);\n          }}\n          onBlur={(e) => {\n            // Delay so suggestion clicks land first.\n            setTimeout(() => setOpen(false), 150);\n            props.onBlur?.(e);\n          }}\n          {...props}\n          value={props.value ?? value}\n          onChange={(e) => {\n            setValue(e.target.value);\n            onValueChange?.(e.target.value);\n            props.onChange?.(e);\n          }}\n        />\n        {value ? (\n          <button\n            type=\"button\"\n            aria-label=\"Clear\"\n            onMouseDown={(e) => e.preventDefault()}\n            onClick={() => {\n              setValue(\"\");\n              onValueChange?.(\"\");\n              inputRef.current?.focus();\n            }}\n            className=\"flex size-8 shrink-0 cursor-pointer items-center justify-center rounded-full text-on-surface-variant hover:bg-[color-mix(in_srgb,var(--on-surface)_8%,transparent)]\"\n          >\n            <XIcon className=\"size-5\" />\n          </button>\n        ) : (\n          trailing\n        )}\n      </div>\n      {open && suggestions ? (\n        <div\n          data-slot=\"search-bar-view\"\n          className=\"absolute inset-x-0 top-full z-50 overflow-hidden rounded-b-xl bg-surface-high pb-2 shadow-[var(--shadow-elevation-3)]\"\n        >\n          <div className=\"mx-4 h-px bg-outline-variant\" />\n          {suggestions}\n        </div>\n      ) : null}\n    </div>\n  );\n}\n\nexport { SearchBar };\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

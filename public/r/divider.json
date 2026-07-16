@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "divider",
+  "title": "Divider",
+  "description": "1dp outline-variant rule, full-width or inset.",
+  "registryDependencies": [
+    "utils"
+  ],
+  "files": [
+    {
+      "path": "registry/mountainview-ui/divider.tsx",
+      "content": "import * as React from \"react\";\n\nimport { cn } from \"@/lib/utils\";\n\n/** M3 divider: 1dp outline-variant, full-width or inset. */\nfunction Divider({\n  className,\n  inset,\n  orientation = \"horizontal\",\n  ...props\n}: React.ComponentProps<\"div\"> & {\n  /** Indent past a leading icon/avatar column (16dp both sides). */\n  inset?: boolean;\n  orientation?: \"horizontal\" | \"vertical\";\n}) {\n  return (\n    <div\n      data-slot=\"divider\"\n      role=\"separator\"\n      aria-orientation={orientation}\n      className={cn(\n        \"shrink-0 bg-outline-variant\",\n        orientation === \"horizontal\" ? \"h-px w-full\" : \"h-full w-px\",\n        inset && orientation === \"horizontal\" && \"mx-4 w-auto\",\n        className\n      )}\n      {...props}\n    />\n  );\n}\n\nexport { Divider };\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

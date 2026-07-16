@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "bottom-app-bar",
+  "title": "Bottom App Bar",
+  "description": "80dp action bar with a trailing FAB slot.",
+  "registryDependencies": [
+    "utils"
+  ],
+  "files": [
+    {
+      "path": "registry/mountainview-ui/bottom-app-bar.tsx",
+      "content": "import * as React from \"react\";\n\nimport { cn } from \"@/lib/utils\";\n\n/**\n * M3 bottom app bar: 80dp surface-container bar with leading icon\n * actions and a trailing FAB slot.\n */\nfunction BottomAppBar({\n  className,\n  fab,\n  children,\n  ...props\n}: React.ComponentProps<\"div\"> & {\n  /** Trailing floating action button. */\n  fab?: React.ReactNode;\n}) {\n  return (\n    <div\n      data-slot=\"bottom-app-bar\"\n      className={cn(\n        \"flex h-20 w-full items-center gap-1 bg-surface-container px-2\",\n        className\n      )}\n      {...props}\n    >\n      {children}\n      {fab ? <span className=\"ml-auto pr-2 [&_[data-slot=fab]]:shadow-none\">{fab}</span> : null}\n    </div>\n  );\n}\n\nexport { BottomAppBar };\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}
