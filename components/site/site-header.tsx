@@ -3,6 +3,7 @@
 import Link from "next/link";
 
 import { LanguageSwitcher } from "@/components/site/language-switcher";
+import { MobileMenu } from "@/components/site/mobile-menu";
 import { ThemeToggle } from "@/components/site/theme-toggle";
 import { IconButton } from "@/registry/mountainview-ui/icon-button";
 import { siteConfig } from "@/lib/docs";
@@ -21,11 +22,12 @@ export function SiteHeader() {
 
   return (
     <header className="sticky top-0 z-40 bg-surface/80 backdrop-blur-xl shadow-[0_1px_0_0_var(--outline-variant)]">
-      <div className="mx-auto flex h-16 max-w-6xl items-center gap-6 px-5">
-        <Link href="/" className="text-title-m tracking-tight text-on-surface">
+      <div className="mx-auto flex h-16 max-w-6xl items-center gap-2 px-3 md:gap-6 md:px-5">
+        <MobileMenu />
+        <Link href="/" className="shrink-0 text-title-m tracking-tight text-on-surface">
           ▲ mountainview-ui
         </Link>
-        <nav className="flex items-center gap-4 text-label-l text-on-surface-variant">
+        <nav className="hidden items-center gap-4 text-label-l text-on-surface-variant md:flex">
           <Link href="/docs" className="transition-colors hover:text-on-surface">
             {dict.nav.docs}
           </Link>
@@ -36,14 +38,14 @@ export function SiteHeader() {
             {dict.nav.showcases}
           </Link>
         </nav>
-        <div className="ml-auto flex items-center gap-1">
+        <div className="ml-auto flex shrink-0 items-center gap-1">
           <LanguageSwitcher />
           <a
             href={siteConfig.github}
             target="_blank"
             rel="noreferrer"
             aria-label="GitHub"
-            className="flex size-10 items-center justify-center rounded-full text-on-surface-variant transition-colors hover:bg-[color-mix(in_srgb,var(--on-surface)_8%,transparent)]"
+            className="hidden size-10 items-center justify-center rounded-full text-on-surface-variant transition-colors hover:bg-[color-mix(in_srgb,var(--on-surface)_8%,transparent)] sm:flex"
           >
             <GitHubIcon />
           </a>
