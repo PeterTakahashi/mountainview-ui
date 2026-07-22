@@ -3,11 +3,11 @@
 Install any component with:
 
 ```bash
-npx shadcn@latest add https://mountainview-ui.vercel.app/r/<slug>.json
+npx shadcn@latest add https://mountainview-ui.baltoon.jp/r/<slug>.json
 ```
 
 Import from `@/components/ui/<slug>`. Per-component docs with live demos:
-`https://mountainview-ui.vercel.app/docs/components/<slug>`
+`https://mountainview-ui.baltoon.jp/docs/components/<slug>`
 
 ## Table of contents
 

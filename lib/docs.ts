@@ -46,5 +46,5 @@ export const siteConfig = {
   github: "https://github.com/PeterTakahashi/mountainview-ui",
   /** Base URL used in `npx shadcn add` commands. */
   registryBase:
-    process.env.NEXT_PUBLIC_SITE_URL ?? "https://mountainview-ui.vercel.app",
+    process.env.NEXT_PUBLIC_SITE_URL ?? "https://mountainview-ui.baltoon.jp",
 };
