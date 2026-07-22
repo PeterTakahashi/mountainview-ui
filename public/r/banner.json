@@ -3,9 +3,6 @@
   "name": "banner",
   "title": "Banner",
   "description": "Inline contained banner with icon and text actions.",
-  "registryDependencies": [
-    "utils"
-  ],
   "files": [
     {
       "path": "registry/mountainview-ui/banner.tsx",

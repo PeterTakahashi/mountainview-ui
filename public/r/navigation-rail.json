@@ -3,9 +3,6 @@
   "name": "navigation-rail",
   "title": "Navigation Rail",
   "description": "The 80dp vertical rail with a FAB slot.",
-  "registryDependencies": [
-    "utils"
-  ],
   "files": [
     {
       "path": "registry/mountainview-ui/navigation-rail.tsx",

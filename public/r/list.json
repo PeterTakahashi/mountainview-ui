@@ -3,9 +3,6 @@
   "name": "list",
   "title": "List",
   "description": "One- to three-line list items with leading and trailing slots.",
-  "registryDependencies": [
-    "utils"
-  ],
   "files": [
     {
       "path": "registry/mountainview-ui/list.tsx",

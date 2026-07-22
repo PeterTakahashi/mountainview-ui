@@ -7,9 +7,6 @@
     "class-variance-authority",
     "lucide-react"
   ],
-  "registryDependencies": [
-    "utils"
-  ],
   "files": [
     {
       "path": "registry/mountainview-ui/chip.tsx",

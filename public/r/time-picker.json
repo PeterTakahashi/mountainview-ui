@@ -3,9 +3,6 @@
   "name": "time-picker",
   "title": "Time Picker",
   "description": "Input-variant picker with 2-digit fields and AM/PM.",
-  "registryDependencies": [
-    "utils"
-  ],
   "files": [
     {
       "path": "registry/mountainview-ui/time-picker.tsx",

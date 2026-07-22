@@ -6,9 +6,6 @@
   "dependencies": [
     "radix-ui"
   ],
-  "registryDependencies": [
-    "utils"
-  ],
   "files": [
     {
       "path": "registry/mountainview-ui/dialog.tsx",

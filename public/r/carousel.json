@@ -3,9 +3,6 @@
   "name": "carousel",
   "title": "Carousel",
   "description": "Multi-browse hero strip with rounded-xl snap items.",
-  "registryDependencies": [
-    "utils"
-  ],
   "files": [
     {
       "path": "registry/mountainview-ui/carousel.tsx",

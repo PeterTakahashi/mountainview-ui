@@ -3,9 +3,6 @@
   "name": "top-app-bar",
   "title": "Top App Bar",
   "description": "64dp small app bar with on-scroll tint.",
-  "registryDependencies": [
-    "utils"
-  ],
   "files": [
     {
       "path": "registry/mountainview-ui/top-app-bar.tsx",

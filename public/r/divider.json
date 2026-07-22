@@ -3,9 +3,6 @@
   "name": "divider",
   "title": "Divider",
   "description": "1dp outline-variant rule, full-width or inset.",
-  "registryDependencies": [
-    "utils"
-  ],
   "files": [
     {
       "path": "registry/mountainview-ui/divider.tsx",

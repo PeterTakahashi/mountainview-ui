@@ -3,9 +3,6 @@
   "name": "bottom-app-bar",
   "title": "Bottom App Bar",
   "description": "80dp action bar with a trailing FAB slot.",
-  "registryDependencies": [
-    "utils"
-  ],
   "files": [
     {
       "path": "registry/mountainview-ui/bottom-app-bar.tsx",

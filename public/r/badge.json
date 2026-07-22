@@ -3,9 +3,6 @@
   "name": "badge",
   "title": "Badge",
   "description": "The 6dp error dot and numbered count badge.",
-  "registryDependencies": [
-    "utils"
-  ],
   "files": [
     {
       "path": "registry/mountainview-ui/badge.tsx",

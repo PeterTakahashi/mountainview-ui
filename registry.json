@@ -25,9 +25,6 @@
       "type": "registry:ui",
       "title": "Badge",
       "description": "The 6dp error dot and numbered count badge.",
-      "registryDependencies": [
-        "utils"
-      ],
       "files": [
         {
           "path": "registry/mountainview-ui/badge.tsx",
@@ -40,9 +37,6 @@
       "type": "registry:ui",
       "title": "Banner",
       "description": "Inline contained banner with icon and text actions.",
-      "registryDependencies": [
-        "utils"
-      ],
       "files": [
         {
           "path": "registry/mountainview-ui/banner.tsx",
@@ -55,9 +49,6 @@
       "type": "registry:ui",
       "title": "Bottom App Bar",
       "description": "80dp action bar with a trailing FAB slot.",
-      "registryDependencies": [
-        "utils"
-      ],
       "files": [
         {
           "path": "registry/mountainview-ui/bottom-app-bar.tsx",
@@ -70,9 +61,6 @@
       "type": "registry:ui",
       "title": "Bottom Sheet",
       "description": "28dp-corner sheet with a drag handle on surface-container-low.",
-      "registryDependencies": [
-        "utils"
-      ],
       "files": [
         {
           "path": "registry/mountainview-ui/bottom-sheet.tsx",
@@ -88,9 +76,6 @@
       "type": "registry:ui",
       "title": "Button",
       "description": "Filled, tonal, outlined, text, and elevated common buttons.",
-      "registryDependencies": [
-        "utils"
-      ],
       "files": [
         {
           "path": "registry/mountainview-ui/button.tsx",
@@ -107,9 +92,6 @@
       "type": "registry:ui",
       "title": "Card",
       "description": "Elevated, filled, and outlined cards with 12dp corners.",
-      "registryDependencies": [
-        "utils"
-      ],
       "files": [
         {
           "path": "registry/mountainview-ui/card.tsx",
@@ -125,9 +107,6 @@
       "type": "registry:ui",
       "title": "Carousel",
       "description": "Multi-browse hero strip with rounded-xl snap items.",
-      "registryDependencies": [
-        "utils"
-      ],
       "files": [
         {
           "path": "registry/mountainview-ui/carousel.tsx",
@@ -140,9 +119,6 @@
       "type": "registry:ui",
       "title": "Checkbox",
       "description": "18dp box with 2dp outline and primary fill.",
-      "registryDependencies": [
-        "utils"
-      ],
       "files": [
         {
           "path": "registry/mountainview-ui/checkbox.tsx",
@@ -159,9 +135,6 @@
       "type": "registry:ui",
       "title": "Chip",
       "description": "Assist, filter, and input chips, 32dp with 8dp corners.",
-      "registryDependencies": [
-        "utils"
-      ],
       "files": [
         {
           "path": "registry/mountainview-ui/chip.tsx",
@@ -178,9 +151,6 @@
       "type": "registry:ui",
       "title": "Date Picker",
       "description": "Docked calendar with today outline and filled selection.",
-      "registryDependencies": [
-        "utils"
-      ],
       "files": [
         {
           "path": "registry/mountainview-ui/date-picker.tsx",
@@ -196,9 +166,6 @@
       "type": "registry:ui",
       "title": "Dialog",
       "description": "Basic dialog: 28dp corners, headline, text-button actions.",
-      "registryDependencies": [
-        "utils"
-      ],
       "files": [
         {
           "path": "registry/mountainview-ui/dialog.tsx",
@@ -214,9 +181,6 @@
       "type": "registry:ui",
       "title": "Divider",
       "description": "1dp outline-variant rule, full-width or inset.",
-      "registryDependencies": [
-        "utils"
-      ],
       "files": [
         {
           "path": "registry/mountainview-ui/divider.tsx",
@@ -229,9 +193,6 @@
       "type": "registry:ui",
       "title": "FAB",
       "description": "Floating action button in four colors and four sizes, extended included.",
-      "registryDependencies": [
-        "utils"
-      ],
       "files": [
         {
           "path": "registry/mountainview-ui/fab.tsx",
@@ -247,9 +208,6 @@
       "type": "registry:ui",
       "title": "Icon Button",
       "description": "Standard, filled, tonal, and outlined icon buttons with toggle.",
-      "registryDependencies": [
-        "utils"
-      ],
       "files": [
         {
           "path": "registry/mountainview-ui/icon-button.tsx",
@@ -265,9 +223,6 @@
       "type": "registry:ui",
       "title": "List",
       "description": "One- to three-line list items with leading and trailing slots.",
-      "registryDependencies": [
-        "utils"
-      ],
       "files": [
         {
           "path": "registry/mountainview-ui/list.tsx",
@@ -280,9 +235,6 @@
       "type": "registry:ui",
       "title": "Menu",
       "description": "Elevation-2 menu on surface-container with 48dp items.",
-      "registryDependencies": [
-        "utils"
-      ],
       "files": [
         {
           "path": "registry/mountainview-ui/menu.tsx",
@@ -299,9 +251,6 @@
       "type": "registry:ui",
       "title": "Navigation Bar",
       "description": "The 80dp bottom bar with pill active indicators.",
-      "registryDependencies": [
-        "utils"
-      ],
       "files": [
         {
           "path": "registry/mountainview-ui/navigation-bar.tsx",
@@ -317,9 +266,6 @@
       "type": "registry:ui",
       "title": "Navigation Drawer",
       "description": "Standard and modal drawers with pill indicators.",
-      "registryDependencies": [
-        "utils"
-      ],
       "files": [
         {
           "path": "registry/mountainview-ui/navigation-drawer.tsx",
@@ -335,9 +281,6 @@
       "type": "registry:ui",
       "title": "Navigation Rail",
       "description": "The 80dp vertical rail with a FAB slot.",
-      "registryDependencies": [
-        "utils"
-      ],
       "files": [
         {
           "path": "registry/mountainview-ui/navigation-rail.tsx",
@@ -350,9 +293,6 @@
       "type": "registry:ui",
       "title": "Progress",
       "description": "Linear indicator with stop dot, plus circular indeterminate.",
-      "registryDependencies": [
-        "utils"
-      ],
       "files": [
         {
           "path": "registry/mountainview-ui/progress.tsx",
@@ -368,9 +308,6 @@
       "type": "registry:ui",
       "title": "Radio Group",
       "description": "20dp radio rings with a primary dot.",
-      "registryDependencies": [
-        "utils"
-      ],
       "files": [
         {
           "path": "registry/mountainview-ui/radio-group.tsx",
@@ -386,9 +323,6 @@
       "type": "registry:ui",
       "title": "Search Bar",
       "description": "Full-round search bar expanding into a suggestion view.",
-      "registryDependencies": [
-        "utils"
-      ],
       "files": [
         {
           "path": "registry/mountainview-ui/search-bar.tsx",
@@ -404,9 +338,6 @@
       "type": "registry:ui",
       "title": "Segmented Button",
       "description": "Outlined segments; selected fills with a check.",
-      "registryDependencies": [
-        "utils"
-      ],
       "files": [
         {
           "path": "registry/mountainview-ui/segmented-button.tsx",
@@ -423,9 +354,6 @@
       "type": "registry:ui",
       "title": "Side Sheet",
       "description": "400dp trailing-edge panel with title and close.",
-      "registryDependencies": [
-        "utils"
-      ],
       "files": [
         {
           "path": "registry/mountainview-ui/side-sheet.tsx",
@@ -442,9 +370,6 @@
       "type": "registry:ui",
       "title": "Slider",
       "description": "Tall active track, narrow handle, stop indicator.",
-      "registryDependencies": [
-        "utils"
-      ],
       "files": [
         {
           "path": "registry/mountainview-ui/slider.tsx",
@@ -460,9 +385,6 @@
       "type": "registry:ui",
       "title": "Snackbar",
       "description": "Inverse-surface toast, bottom-left; call snackbar() anywhere.",
-      "registryDependencies": [
-        "utils"
-      ],
       "files": [
         {
           "path": "registry/mountainview-ui/snackbar.tsx",
@@ -479,9 +401,6 @@
       "type": "registry:ui",
       "title": "Switch",
       "description": "52x32 track; the thumb grows and shows a check when on.",
-      "registryDependencies": [
-        "utils"
-      ],
       "files": [
         {
           "path": "registry/mountainview-ui/switch.tsx",
@@ -498,9 +417,6 @@
       "type": "registry:ui",
       "title": "Tabs",
       "description": "Primary tabs with the animated pill underline indicator.",
-      "registryDependencies": [
-        "utils"
-      ],
       "files": [
         {
           "path": "registry/mountainview-ui/tabs.tsx",
@@ -516,9 +432,6 @@
       "type": "registry:ui",
       "title": "Text Field",
       "description": "Filled and outlined fields with the floating label.",
-      "registryDependencies": [
-        "utils"
-      ],
       "files": [
         {
           "path": "registry/mountainview-ui/text-field.tsx",
@@ -534,9 +447,6 @@
       "type": "registry:ui",
       "title": "Time Picker",
       "description": "Input-variant picker with 2-digit fields and AM/PM.",
-      "registryDependencies": [
-        "utils"
-      ],
       "files": [
         {
           "path": "registry/mountainview-ui/time-picker.tsx",
@@ -549,9 +459,6 @@
       "type": "registry:ui",
       "title": "Tooltip",
       "description": "Plain inverse-surface pill and rich container variants.",
-      "registryDependencies": [
-        "utils"
-      ],
       "files": [
         {
           "path": "registry/mountainview-ui/tooltip.tsx",
@@ -567,9 +474,6 @@
       "type": "registry:ui",
       "title": "Top App Bar",
       "description": "64dp small app bar with on-scroll tint.",
-      "registryDependencies": [
-        "utils"
-      ],
       "files": [
         {
           "path": "registry/mountainview-ui/top-app-bar.tsx",
